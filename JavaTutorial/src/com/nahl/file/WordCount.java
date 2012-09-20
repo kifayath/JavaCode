@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.StreamTokenizer;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 public class WordCount {
@@ -34,9 +36,9 @@ public class WordCount {
 
 					}
 				}
-				
+
 			}
-			//System.out.println(wordList);
+			// System.out.println(wordList);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -47,7 +49,49 @@ public class WordCount {
 	public static void main(String[] args) throws IOException {
 		WordCount wc = new WordCount();
 		ArrayList words = wc.scanFile();
-	//	for()
+		Iterator iterator = words.iterator();
+		System.out.println(wc.scanFile());
+		//System.out.print(wc.checkDuplicate());
+		while (iterator.hasNext()) {
+			// System.out.println(wc.checkWord((String) iterator.next()));
+
+		}
+		
+		//wc.checkDuplicate();
+	}
+
+	public int checkWord(String checkWords) throws IOException {
+		int count = 0;
+		ArrayList list = new WordCount().scanFile();
+
+		Iterator iterator = list.iterator();
+		while (iterator.hasNext()) {
+			if (checkWords == iterator.next()) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+	public void checkDuplicate() throws IOException {
+		ArrayList duplicateList;
+		duplicateList = wordList;
+		Iterator iterator1 = duplicateList.iterator();
+		Iterator iterator2 = wordList.iterator();
+		while (iterator1.hasNext()) {
+			String checkWord = (String) iterator1.next();
+			while (iterator2.hasNext()) {
+				if (checkWord == iterator2.next()) {
+					
+				}
+				else {
+					ArrayList newList = new ArrayList();
+					
+					System.out.println(newList.add(checkWord));
+				}
+			}
+		}
 	}
 
 }
