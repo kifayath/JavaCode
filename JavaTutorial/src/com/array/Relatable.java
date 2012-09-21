@@ -1,0 +1,6 @@
+package com.array;
+
+public interface Relatable {
+
+	public int isLargerThan(Relatable other);
+}

@@ -51,11 +51,11 @@ public class WordCount {
 		ArrayList words = wc.scanFile();
 		Iterator iterator = words.iterator();
 		System.out.println(wc.scanFile());
-		//System.out.print(wc.checkDuplicate());
-		while (iterator.hasNext()) {
+	
+//		while (iterator.hasNext()) {
 			// System.out.println(wc.checkWord((String) iterator.next()));
 
-		}
+	//	}
 		
 		//wc.checkDuplicate();
 	}
@@ -74,11 +74,12 @@ public class WordCount {
 		return count;
 	}
 
-	public void checkDuplicate() throws IOException {
-		ArrayList duplicateList;
+	public void checkDuplicate(ArrayList duplicateList) throws IOException {
+		
 		duplicateList = wordList;
 		Iterator iterator1 = duplicateList.iterator();
 		Iterator iterator2 = wordList.iterator();
+		System.out.println(iterator1);
 		while (iterator1.hasNext()) {
 			String checkWord = (String) iterator1.next();
 			while (iterator2.hasNext()) {

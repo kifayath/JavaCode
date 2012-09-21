@@ -1,10 +1,12 @@
 package com.array;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Prime {
-	int i,j,res = 0;
+	int i,j,result = 0;
+	
+	ArrayList<Integer> prime = new ArrayList<Integer>();
 	
 	int getMaxPrimeNumber(int value)
 	{
@@ -22,14 +24,15 @@ public class Prime {
 			 }
 			 if ( i == j)
 			 {
-				 res = i;
+				 result = i;
 			 }
 		 }
-		return res;
+		return result;
 		
 	}
 	
-/*	ArrayList ListOfPrimeNumbers(int value)
+	
+	public ArrayList<Integer> ListOfPrimeNumbers(int value)
 	{
 		for(i=0;i<=value;i++)
 		{
@@ -42,10 +45,33 @@ public class Prime {
 			}
 			if( i == j)
 			{
-				res = i;
+				prime.add(i);
 			}
-			return (ArrayList) res;
 		}
+		return prime;
 	}
-*/
+	
+	public boolean isPrime(int value) {
+		boolean res = false;
+		int count =0;
+		for(i=1;i<=value;i++){
+			
+
+				int check = value % i;
+				if( check == 0)
+				{
+					count++;
+				}
+			}
+			if(count == 2)
+			{
+				res = true;
+					
+			}
+		
+		return res;
+		
+	}
+	
+
 }
